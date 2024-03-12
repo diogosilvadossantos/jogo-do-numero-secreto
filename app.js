@@ -10,7 +10,7 @@ function exibirTextoNaTela(tag,  texto) {
 
 function exibirMensagemInicial() {
     exibirTextoNaTela('h1', 'Jogo do número secreto');
-    exibirTextoNaTela('p', `Tente adivinhar o número secreto entre 1 e ${numeroLimite}:`);
+    exibirTextoNaTela('p', `Tente adivinhar o número secreto entre 1 e ${numeroLimite}!`);
 }
 
 exibirMensagemInicial();
@@ -39,7 +39,7 @@ function gerarNumeroAleatorio() {
     let numeroEscolhido = parseInt(Math.random() * numeroLimite +  1);
     let quantidadeDeElementos = listaDeNumerosSorteados.length;
    
-    if(quantidadeDeElementos == 4){
+    if(quantidadeDeElementos == numeroLimite){
         listaDeNumerosSorteados = [];
     }
     if(listaDeNumerosSorteados.includes(numeroEscolhido)){
@@ -62,6 +62,3 @@ function novoJogo (){
     exibirMensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled', true);
 }
-
-console.log(numeroSecreto);
-
